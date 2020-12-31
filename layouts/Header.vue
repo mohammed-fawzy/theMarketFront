@@ -25,7 +25,7 @@
                      <a href="#"><img src="@/assets/img/arbic.png" alt=""><span>العربية</span></a>
                   </div> -->
                   <!-- if not login -->
-                  <div><a href="registration.html">Register</a> / <a href="sign_in.html">sign_in</a></div>
+                  <div><a href="registration">register</a> / <a href="sign-in">sign in</a></div>
                   <!-- if login -->
                   <!-- <div><a href="profile.html">Asmaa Esmail</a></div> -->
                </div>
@@ -51,9 +51,9 @@
                         <div class="flex">
 
                            <div class="header-search">
-                              <form class="" action="" method="post">
-                                 <input class="form-control" type="text" placeholder="search">
-                                 <button type="submit"><i class="fa fa-search"></i></button>
+                              <form class="">
+                                 <input class="form-control" type="text" placeholder="search" v-model="searchWord">
+                                 <button type="submit" @click="search"><i class="fa fa-search"></i></button>
                               </form>
                            </div>
                         </div>
@@ -84,3 +84,22 @@
    <!-- /////////////////////||||||||||||||||||||||||||||| End Navbar |||||||||||||||||||||||||||| -->
   </section>
 </template>
+
+<script>
+export default {
+   data(){
+      return {
+         searchWord:''
+      }
+   },
+    methods: {
+       search(){
+         //  let name = {
+         //     'name' : this.searchWord
+         //  }
+         //  let res = this.$axios.$get('api/sub-categories',name)
+         //  console.log('res', res)
+       }
+    }
+}
+</script>

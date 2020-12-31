@@ -48,7 +48,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="number-input">
-                          <p class="disccolor"><span>{{(parseFloat(post.price) - (parseFloat(post.price) * (parseFloat(post.discount) / 100))).toFixed(3)}} ريال</span>
+                          <p class="disccolor"><span>{{(parseFloat(product.price) - (parseFloat(product.price) * (parseFloat(product.discount) / 100))).toFixed(3)}} ريال</span>
                               <span>{{product.price}} ريال</span> </p>
                           <div class="contentbuttons">
                               <div class="product-option">
@@ -90,6 +90,7 @@ import Vue from 'vue'
       }
     },
     mounted() {
+      console.log('categories', this.$store.state.categories)
     },
     methods: {
 
