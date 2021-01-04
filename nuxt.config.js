@@ -1,9 +1,11 @@
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
-
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
+  // generate: {
+  // devtools:true
+  // },
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -20,15 +22,20 @@ export default {
       {src: 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js',body: true,
        type: "text/javascript"
       },
-      {src: '/js/bootstrap.min.js', body: true, type: "text/javascript"},
-      {src: '/js/wow.min.js', body: true, type: "text/javascript"},
+      {src: 'js/bootstrap.min.js', body: true, type: "text/javascript"},
+      {src: 'js/wow.min.js', body: true, type: "text/javascript"},
       // {src:'https://unpkg.com/swiper/swiper-bundle.js', body: true,
-      {src: '/js/swiper.min.js', body: true,type: "text/javascript"},
-      {src: '/js/isotope.pkgd.js', body: true,type: "text/javascript"},
-      {src: '/js/bootstrap-select.min.js', body: true ,type: "text/javascript"},
-      {src: '/js/home.js', body: true ,type: "text/javascript"},
-      {src: '/js/js.js', body: true ,type: "text/javascript"},
-      {src: '/js/owl.carousel.min.js', body: true ,type: "text/javascript"},
+      {src: 'js/swiper.min.js', body: true,type: "text/javascript"},
+      {src: 'js/isotope.pkgd.js', body: true,type: "text/javascript"},
+      {src: 'js/bootstrap-select.min.js', body: true ,type: "text/javascript"},
+      {src: 'js/home.js', body: true ,type: "text/javascript"},
+      {src: 'js/js.js', body: true ,type: "text/javascript"},
+      {src: 'js/owl.carousel.min.js', body: true ,type: "text/javascript"},
+      {src: 'js/jquery.smartWizard.min.js', body: true ,type: "text/javascript"},
+      {src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAiOgBoR0bz-6mj23O0Wmk1CScy41joFMY', body: true ,type: "text/javascript"},
+      // {src: '/js/initmap.js', body: true ,type: "text/javascript"},
+
+
     ],
   },
 
@@ -40,18 +47,20 @@ export default {
     '@/assets/css/bootstrap.css',
     '@/assets/css/swiper.min.css',
     '@/assets/css/owl.carousel.css',
+    '@/assets/css/smart_wizard_theme_dots.min.css',
     '@/assets/css/main.css',
     '@/assets/css/first.css',
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    { src: '~/plugins/vuex-persist', ssr: false }
+    { src: '~/plugins/vuex-persist', ssr: false },
+    { src: '~/plugins/axios', ssr: false },
   ],
 
-  env: {
-    baseUrl: process.env.BASE_URL || 'https://the-market.se01.tech/'
-  },
+  // env: {
+  //   baseUrl: process.env.BASE_URL || 'https://the-market.se01.tech/'
+  // },
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -59,19 +68,30 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
   ],
+  // router: {
+  //   base:'/theMarketFront/',
+  //   mode: 'hash'
+  // },
+  // srcDir: 'theMarketFront/',
 
+  // buildDir: 'dist',
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+
+    'vue-sweetalert2/nuxt'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL:'https://the-market.se01.tech/'
+    // baseURL:'https://the-market.se01.tech/'
   },
+
+
+
   publicRuntimeConfig: {
     axios: {
       browserBaseURL: process.env.BROWSER_BASE_URL
@@ -85,5 +105,6 @@ export default {
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    // publicPath: 'theMarketFront/',
   }
 }
