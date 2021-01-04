@@ -6,19 +6,16 @@
       <div class="footer all-section">
          <div class="container">
             <div class="row">
-               <div class="col-xs-12 col-md-3 ">
+               <div class="col-xs-12 col-md-4 ">
                   <div class="rigtffoter">
-                     <a href="index.html">
-                        <img src="@/assets/img/logo.svg" alt="">
-                     </a>
                      <p class="p-m0"> 101 E 129th East chicago in ,</p>
                      <a href="tel:584855200000">tel : 9888875</a>
                      <a href="mailto:intoderective@gmail.com">intoderective@gmail.com</a>
                      <p class="copyright">Copyright 2020 <span>&copy;</span> TheMraket designe by leonard</p>
                   </div>
                </div>
-               <div class="col-xs-6 col-md-2 mt12">
-                  <div class="foot1">
+               <!-- <div class="col-xs-6 col-md-2 mt12"> -->
+                  <!-- <div class="foot1">
                      <h3> find fast</h3>
                      <ul class="linksfooter">
                         <li><a href="#">laptop $ computer</a></li>
@@ -26,15 +23,14 @@
                         <li><a href="#">tv $ audio</a></li>
                         <li><a href="#">tv $ audio</a></li>
                      </ul>
-                  </div>
-               </div>
+                  </div> -->
+               <!-- </div> -->
                <div class="col-xs-6 col-md-2 mt12">
                   <div class="foot1">
                      <h3> information</h3>
                      <ul class="linksfooter">
-                        <li><a href="#"> find astore</a></li>
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">contact us</a></li>
+                        <li><a href="/about-us">about us</a></li>
+                        <li><a href="/contact-us">contact us</a></li>
                      </ul>
                   </div>
                </div>
@@ -49,14 +45,17 @@
                   </div>
                </div>
                <div class="col-xs-12 col-md-3 mt12">
-                  <h3> Sign up to new letter</h3>
+                  <!-- <h3> Sign up to new letter</h3>
                   <p class="footergray">sub scripe our newes letter gor got notfication about information discount</p>
                   <form action="../">
                      <div class="subdiv">
                         <input class="form-control inputsubscribe" type="email" placeholder=" enter your email">
                         <button type="submit">subscribe</button>
                      </div>
-                  </form>
+                  </form> -->
+                  <a href="/" class="logo">
+                     <img class="logo1" src="@/assets/img/logo.svg" alt="">
+                  </a>
                   <div class="contentsocial">
                      <span>Git in touch</span>
                      <ul class="social-networks square spin-icon">

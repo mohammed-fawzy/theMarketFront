@@ -10,18 +10,7 @@
                   <p>best offer</p>
                   <p>{{banner.name}}</p>
                   <div class="text-box">
-                     <a :href="banner.url" class="buttnedit btn-white "> shop now</a>
-                  </div>
-
-               </div>
-            </div>
-             <div class="swiper-slide">
-               <img src="@/assets/img/slide1.png" alt="">
-               <div class="flexslide">
-                  <p>best offer</p>
-                  <p>lorem ipsum 30% </p>
-                  <div class="text-box">
-                     <a href="shop.html" class="buttnedit btn-white "> shop now</a>
+                     <a href="/shop" class="buttnedit btn-white "> shop now</a>
                   </div>
 
                </div>
@@ -87,12 +76,12 @@
          <div class="container">
             <h3 class="section-title">New arrivals</h3>
             <div class="row">
-               <div class=" col-xs-12  button-group filters-button-group">
+               <!-- <div class=" col-xs-12  button-group filters-button-group">
                   <button class="button womens" data-filter="*">All</button>
                   <button class="button" data-filter=".mens">Mens </button>
                   <button class="button" data-filter=".transition">Womeen </button>
                   <button class="button" data-filter=".kides">kides</button>
-               </div>
+               </div> -->
             </div>
             <div class="grid1 grid2 over-hideen">
                <div class="row">
@@ -107,11 +96,11 @@
                            </p>
                         </div>
                         <div class="product-image">
-                           <div class="absdiv fire">
-                              <img :src="product.image" alt=""><span>15s</span>
+                           <div class="absdiv fire" v-if="product.sensor">
+                              <img src="@/assets/img/thermometer.png" alt="" class="thermometer"><span>Thermometer</span>
                            </div>
                            <span class="hover-link"></span>
-                           <img class="img-responsive" src="@/assets/img/background-1.png" alt="Lorem Ipsum">
+                           <img class="img-responsive" :src="product.image" alt="Lorem Ipsum">
                         </div>
                         <div class="product-description">
                            <div class="product-label">
@@ -210,3 +199,13 @@
     },
  }
 </script>
+
+<style>
+   .absdiv.fire{
+      color:#2680EB;
+   }
+   img.thermometer{
+      width: 16px;
+      height: 16px;
+   }
+</style>

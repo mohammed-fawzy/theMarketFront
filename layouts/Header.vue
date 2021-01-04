@@ -15,19 +15,26 @@
             </div>
             <div class="col-xs-7 col-sm-5 col-md-3">
                <div class="topNav-right">
-                  <!-- <a href="cart.html">
+                  <a href="/cart">
                      <div class="cart">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="badge badge-secondary">5</span>
+                        <span class="badge badge-secondary">{{selectedUserOrders}}</span>
                      </div>
-                  </a> -->
+                  </a>
                   <!-- <div class="lang">
                      <a href="#"><img src="@/assets/img/arbic.png" alt=""><span>العربية</span></a>
                   </div> -->
                   <!-- if not login -->
-                  <div><a href="registration">register</a> / <a href="sign-in">sign in</a></div>
+                  <transition name="list">
+                  <div v-if="!this.$store.getters['auth/isAuthenticated']">
+                     <a href="/registration">register</a> / <a href="/sign-in">sign in</a>
+                  </div>
                   <!-- if login -->
-                  <!-- <div><a href="profile.html">Asmaa Esmail</a></div> -->
+                  <div v-else>
+                     <a href="profile" class="text-capitalize mr-4">{{this.$store.getters['auth/StateUser'].name}}</a>
+                     <a href="#" @click="signOut"> <i class="fa fa-sign-out-alt" style="vertical-align: middle;" aria-hidden="true"></i> sign out </a>
+                  </div>
+                  </transition>
                </div>
             </div>
          </div>
@@ -51,7 +58,7 @@
                         <div class="flex">
 
                            <div class="header-search">
-                              <form class="">
+                              <form class="" v-on:submit.prevent="search">
                                  <input class="form-control" type="text" placeholder="search" v-model="searchWord">
                                  <button type="submit" @click="search"><i class="fa fa-search"></i></button>
                               </form>
@@ -61,7 +68,8 @@
                      <div class="col-md-7 editfloat">
                         <ul class="right top-ul chevron">
                            <li><a class="active" href="/">HOME</a></li>
-                           <li><a href="shop">SHOP</a></li>
+                           <li><a href="/shop">SHOP</a></li>
+                           <li><a href="/contact-us">Contact us</a></li>
                            <!-- <li><a href="offers.html">OFFERS</a></li>
                            <li><a href="blog.html">BLOG</a></li> -->
 
@@ -89,17 +97,43 @@
 export default {
    data(){
       return {
-         searchWord:''
+         searchWord:'',
       }
    },
     methods: {
-       search(){
-         //  let name = {
-         //     'name' : this.searchWord
-         //  }
-         //  let res = this.$axios.$get('api/sub-categories',name)
-         //  console.log('res', res)
-       }
-    }
+      search(){
+        // console.log('search', this.$router.name == "search")
+        if (this.$router.name != "search") {
+          this.$router.push({ name: 'search'})
+        }
+
+
+        this.$store.dispatch('changeSearchValue', this.searchWord)
+      },
+      signOut(){
+        this.$store.dispatch('auth/LogOut')
+        this.$router.push({name: "index"});
+      }
+    },
+    computed: {
+      selectedUserOrders() {
+        return this.$store.getters.selectedOrdersLength
+      }
+    },
 }
 </script>
+<style>
+   .list-enter,
+   .list-leave-to {
+   visibility: hidden;
+   height: 0;
+   margin: 0;
+   padding: 0;
+   opacity: 0;
+   }
+
+   .list-enter-active,
+   .list-leave-active {
+   transition: all 0.3s;
+   }
+</style>
