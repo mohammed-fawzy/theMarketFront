@@ -110,7 +110,7 @@
                               </div>
                            </div>
                            <div class="product-option">
-                              <a :href="`shop/${product.id}`" class="buttnedit btn-white "> add to cart</a>
+                              <a :href="`/shop/${product.id}`" class="buttnedit btn-white "> add to cart</a>
                            </div>
                         </div>
                      </div>
@@ -208,4 +208,8 @@
       width: 16px;
       height: 16px;
    }
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> 5f780eaab8e1d3744787a9b7a65d5dc42fb91375

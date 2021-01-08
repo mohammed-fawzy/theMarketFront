@@ -31,7 +31,11 @@
                   </div>
                   <!-- if login -->
                   <div v-else>
+<<<<<<< HEAD
+                     <a href="/profile" class="text-capitalize mr-4"><i class="fa fa-user mr-1" style="vertical-align: middle;" aria-hidden="true"></i>{{this.$store.getters['auth/StateUser'].name}}</a>
+=======
                      <a href="profile" class="text-capitalize mr-4">{{this.$store.getters['auth/StateUser'].name}}</a>
+>>>>>>> 5f780eaab8e1d3744787a9b7a65d5dc42fb91375
                      <a href="#" @click="signOut"> <i class="fa fa-sign-out-alt" style="vertical-align: middle;" aria-hidden="true"></i> sign out </a>
                   </div>
                   </transition>

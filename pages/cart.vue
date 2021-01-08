@@ -173,7 +173,11 @@
                                  </div>
                                  <div class="btn-group mr-2 sw-btn-group" role="group"></div>
                                  <div class="text-box">
+<<<<<<< HEAD
+                                    <button type="button" id="laststepOrder" class="buttnedit btn-white sw-btn-next " @mousedown="sendTheCart"> PLACE ORDER</button>
+=======
                                     <button type="button" class="buttnedit btn-white sw-btn-next " @mousedown="sendTheCart"> PLACE ORDER</button>
+>>>>>>> 5f780eaab8e1d3744787a9b7a65d5dc42fb91375
                                  </div>
                               </div>
                            </div>
@@ -181,8 +185,13 @@
                      </div>
                      <div id="step-3" class="steps">
                         <div class='contentcheck'>
+<<<<<<< HEAD
+                           <img src="@/assets/img/complete icon.svg" class="animate__backInDown  wow  animate__animated" alt="">
+                           <p class="pcolorcheck">Order NO <span v-if="orderId">{{orderId}}</span></p>
+=======
                            <img src="img/complete icon.svg" class="animate__backInDown  wow  animate__animated" alt="">
                            <p class="pcolorcheck">Order NO. 54878878545</p>
+>>>>>>> 5f780eaab8e1d3744787a9b7a65d5dc42fb91375
                            <p class="peditwidth">Thank you for ordering in our app.
                               check the Tracker progress with your order.</p>
                            <div class="text-box">
@@ -210,6 +219,10 @@ export default {
         name:'',
         address:'',
         location:null,
+<<<<<<< HEAD
+        orderId:null,
+=======
+>>>>>>> 5f780eaab8e1d3744787a9b7a65d5dc42fb91375
         countries:[
             {name: 'Afghanistan', code: 'AF'},
             {name: 'Åland Islands', code: 'AX'},
@@ -540,22 +553,47 @@ export default {
       }]
       console.log('cart', JSON.stringify(cart) )
       this.$axios.$post(`api/carts`, {"carts":cart} , config ).then((response) => {
+<<<<<<< HEAD
+          if(response.status == true){
+            this.orders.filter(order => {
+               this.$store.dispatch('deleteOrder', order);
+
+            })
+            this.orders = []
+            return response
+         }
+      }).then( (response) => {
+        console.log('response', response)
+        this.orderId = response.data.cart_id
+        let laststepOrder = document.getElementById('laststepOrder');
+        laststepOrder.click()
+=======
          if(response.status == true){
             this.orders.filter(order => {
                this.$store.dispatch('deleteOrder', order);
             })
             this.orders = []
          }
+>>>>>>> 5f780eaab8e1d3744787a9b7a65d5dc42fb91375
       })
    },
    runExtrnalJs(){
       $('#smartwizard').smartWizard({
+<<<<<<< HEAD
+        selected: 0,
+        theme: 'dots',
+        autoAdjustHeight: true,
+        transitionEffect: 'fade',
+        showStepURLhash: false,
+      });
+=======
             selected: 0,
             theme: 'dots',
             autoAdjustHeight: true,
             transitionEffect: 'fade',
             showStepURLhash: false,
          });
+>>>>>>> 5f780eaab8e1d3744787a9b7a65d5dc42fb91375
      }
   },
   computed: {

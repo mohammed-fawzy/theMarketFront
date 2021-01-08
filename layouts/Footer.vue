@@ -38,8 +38,8 @@
                   <div class="foot1">
                      <h3> customre care</h3>
                      <ul class="linksfooter">
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">order history</a></li>
+                        <li><a href="/profile">My Account</a></li>
+                        <li><a href="/profile">order history</a></li>
 
                      </ul>
                   </div>
