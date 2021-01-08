@@ -6,7 +6,13 @@ export default {
   // generate: {
   // devtools:true
   // },
+<<<<<<< HEAD
+  generate: {
+    fallback: true
+  },
+=======
 
+>>>>>>> 5f780eaab8e1d3744787a9b7a65d5dc42fb91375
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'The Market Front',
@@ -25,6 +31,15 @@ export default {
       {src: 'js/bootstrap.min.js', body: true, type: "text/javascript"},
       {src: 'js/wow.min.js', body: true, type: "text/javascript"},
       // {src:'https://unpkg.com/swiper/swiper-bundle.js', body: true,
+<<<<<<< HEAD
+      {src: '/js/swiper.min.js', body: true,type: "text/javascript"},
+      {src: '/js/isotope.pkgd.js', body: true,type: "text/javascript"},
+      {src: '/js/bootstrap-select.min.js', body: true ,type: "text/javascript"},
+      {src: '/js/home.js', body: true ,type: "text/javascript"},
+      {src: '/js/js.js', body: true ,type: "text/javascript"},
+      {src: '/js/owl.carousel.min.js', body: true ,type: "text/javascript"},
+      {src: '/js/jquery.smartWizard.min.js', body: true ,type: "text/javascript"},
+=======
       {src: 'js/swiper.min.js', body: true,type: "text/javascript"},
       {src: 'js/isotope.pkgd.js', body: true,type: "text/javascript"},
       {src: 'js/bootstrap-select.min.js', body: true ,type: "text/javascript"},
@@ -32,6 +47,7 @@ export default {
       {src: 'js/js.js', body: true ,type: "text/javascript"},
       {src: 'js/owl.carousel.min.js', body: true ,type: "text/javascript"},
       {src: 'js/jquery.smartWizard.min.js', body: true ,type: "text/javascript"},
+>>>>>>> 5f780eaab8e1d3744787a9b7a65d5dc42fb91375
       {src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAiOgBoR0bz-6mj23O0Wmk1CScy41joFMY', body: true ,type: "text/javascript"},
       // {src: '/js/initmap.js', body: true ,type: "text/javascript"},
 
